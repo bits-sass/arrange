@@ -2,5 +2,5 @@
   "name": "bits-css-arrange",
   "version": "0.1.0",
   "author": "Lukáš Mladý",
-  "main": "_Arrange.scss"
+  "main": "_arrange.scss"
 }
