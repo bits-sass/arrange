@@ -3,6 +3,19 @@
    ========================================================================== */
 
 /**
+ * Variables
+ *
+ * It is recommended to override these.
+ *
+ * 1. Component namespace.
+ * 2. Size of inter-cell gutter.
+ */
+
+$bits-components-ns: 'bits-' !default; /* 1 */
+
+$bits-arrange-gutter: 10px !default; /* 2 */
+
+/**
  * This component lets you lay out a row of cells in various ways. You can
  * specify whether a cell should be wide enough to fit its content, or take up
  * the remaining space in the row. It's also possible to give all cells an
@@ -16,18 +29,19 @@
  * first 'Arrange-sizeFill' in the component's source order will not share the
  * extra space with any subsequent nodes of that class.
  *
- * Example HTML:
+ * --------------
+ * Example usage:
  *
- * <div class="Arrange Arrange--top">
- *     <div class="Arrange-sizeFit">
- *         [content]
- *     </div>
- *     <div class="Arrange-sizeFill">
- *         [content]
- *     </div>
- *     <div class="Arrange-sizeFit">
- *         [content]
- *     </div>
+ * <div class="Arrange Arrange--middle">
+ *   <div class="Arrange-sizeFit">
+ *     [content]
+ *   </div>
+ *   <div class="Arrange-sizeFill">
+ *     [content]
+ *   </div>
+ *   <div class="Arrange-sizeFit">
+ *     [content]
+ *   </div>
  * </div>
  */
 
@@ -38,7 +52,7 @@
  * 4. Make sure the component fills the full width of its parent.
  */
 
-.Arrange {
+.#{$bits-components-ns}Arrange {
   display: table; /* 1 */
   margin: 0; /* 2 */
   padding: 0; /* 2 */
@@ -56,8 +70,8 @@
  * 2. All cells are top-aligned by default
  */
 
-.Arrange-sizeFill,
-.Arrange-sizeFit {
+.#{$bits-components-ns}Arrange-sizeFill,
+.#{$bits-components-ns}Arrange-sizeFit {
   display: table-cell;
   padding: 0; /* 1 */
   vertical-align: top; /* 2 */
@@ -67,7 +81,7 @@
  * Make sure the main content block expands to fill the remaining space.
  */
 
-.Arrange-sizeFill {
+.#{$bits-components-ns}Arrange-sizeFill {
   width: 100%;
 }
 
@@ -80,7 +94,7 @@
  * need their width set to `100%`.
  */
 
-.Arrange-sizeFill img {
+.#{$bits-components-ns}Arrange-sizeFill img {
   height: auto;
   max-width: 100%;
 }
@@ -91,7 +105,7 @@
  * provide size to a cell.
  */
 
-.Arrange-sizeFit img {
+.#{$bits-components-ns}Arrange-sizeFit img {
   max-width: none !important;
   width: auto !important;
 }
@@ -99,14 +113,18 @@
 /* Vertical alignment modifiers
    ========================================================================== */
 
-.Arrange--middle .Arrange-sizeFill,
-.Arrange--middle .Arrange-sizeFit {
-  vertical-align: middle;
+.#{$bits-components-ns}Arrange--middle {
+  .#{$bits-components-ns}Arrange-sizeFill,
+  .#{$bits-components-ns}Arrange-sizeFit {
+    vertical-align: middle;
+  }
 }
 
-.Arrange--bottom .Arrange-sizeFill,
-.Arrange--bottom .Arrange-sizeFit {
-  vertical-align: bottom;
+.#{$bits-components-ns}Arrange--bottom {
+  .#{$bits-components-ns}Arrange-sizeFill,
+  .#{$bits-components-ns}Arrange-sizeFit {
+    vertical-align: bottom;
+  }
 }
 
 /* Equal-width modifier
@@ -117,7 +135,7 @@
  * the width of their content.
  */
 
-.Arrange--equal {
+.#{$bits-components-ns}Arrange--equal {
   table-layout: fixed;
 }
 
@@ -127,20 +145,26 @@
  * Their inner images will automatically be responsive.
  */
 
-.Arrange--equal > .Arrange-sizeFill,
-.Arrange--equal > .Arrange-sizeFit {
-  width: auto;
+.#{$bits-components-ns}Arrange--equal {
+  > .#{$bits-components-ns}Arrange-sizeFill,
+  > .#{$bits-components-ns}Arrange-sizeFit {
+    width: auto;
+  }
 }
 
 /* Gutter-separating modifier
    ========================================================================== */
 
-.Arrange--withGutter > .Arrange-sizeFill,
-.Arrange--withGutter > .Arrange-sizeFit {
-  padding-left: 10px;
+.#{$bits-components-ns}Arrange--withGutter {
+  > .#{$bits-components-ns}Arrange-sizeFill,
+  > .#{$bits-components-ns}Arrange-sizeFit {
+    padding-left: $bits-arrange-gutter;
+  }
 }
 
-.Arrange--withGutter > .Arrange-sizeFill:first-child,
-.Arrange--withGutter > .Arrange-sizeFit:first-child {
-  padding-left: 0;
+.#{$bits-components-ns}Arrange--withGutter {
+  > .#{$bits-components-ns}Arrange-sizeFill:first-child,
+  > .#{$bits-components-ns}Arrange-sizeFit:first-child {
+    padding-left: 0;
+  }
 }
