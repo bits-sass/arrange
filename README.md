@@ -1,14 +1,14 @@
-# Bits.scss arrange
+# Bits.sass arrange
 
 Component for arranging/aligning horizontal cells, a bit like flexbox.
 
-Read more about [Bits.scss toolkit](https://github.com/bits-scss/bits.scss).
+Read more about [Bits.sass toolkit](https://github.com/bits-sass/bits.sass).
 
 ## Installation
 
-* __Bower:__ `bower install --save bits-scss-arrange`
-* __Download:__ [zip](https://github.com/bits-scss/arrange/zipball/master), [tar.gz](https://github.com/bits-scss/arrange/tarball/master)
-* __Git:__ `git clone https://github.com/bits-scss/arrange.git`
+* __Bower:__ `bower install --save bits-sass-arrange`
+* __Download:__ [zip](https://github.com/bits-sass/arrange/zipball/master), [tar.gz](https://github.com/bits-sass/arrange/tarball/master)
+* __Git:__ `git clone https://github.com/bits-sass/arrange.git`
 
 ## Available SASS variables
 
@@ -27,7 +27,7 @@ Read more about [Bits.scss toolkit](https://github.com/bits-scss/bits.scss).
 
 ## Usage
 
-Like many Bits.scss components, `bits-scss-arrange` relies on a base component
+Like many Bits.sass components, `bits-sass-arrange` relies on a base component
 class that is extended by any number of additional modifier classes.
 This component works best for small-scale UI layout, for example, image-content
 pairs:

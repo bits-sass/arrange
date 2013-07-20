@@ -1,6 +1,6 @@
 {
-  "name": "bits-scss-arrange",
-  "version": "0.2.0",
+  "name": "bits-sass-arrange",
+  "version": "0.2.1",
   "author": "Lukáš Mladý",
   "main": "_arrange.scss"
 }
