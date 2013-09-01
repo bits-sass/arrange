@@ -8,12 +8,19 @@
  * It is recommended to override these.
  *
  * 1. Component namespace.
- * 2. Size of inter-cell gutter.
  */
 
 $bits-components-ns: 'bits-' !default; /* 1 */
 
-$bits-arrange-gutter: 10px !default; /* 2 */
+/**
+ * Arrange component
+ *
+ * 1. Size of inter-cell gutter.
+ */
+
+$bits-arrange-gutter: 10px !default; /* 1 */
+
+/* -------------------------------------------------------------------------- */
 
 /**
  * This component lets you lay out a row of cells in various ways. You can
@@ -31,6 +38,7 @@ $bits-arrange-gutter: 10px !default; /* 2 */
  *
  * --------------
  * Example usage:
+ * --------------
  *
  * <div class="Arrange Arrange--middle">
  *   <div class="Arrange-sizeFit">
@@ -158,6 +166,8 @@ $bits-arrange-gutter: 10px !default; /* 2 */
     }
   }
 }
+
+
 
 /* Gutter-separating modifier
    ========================================================================== */

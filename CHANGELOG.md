@@ -2,6 +2,7 @@
 
 * Reorder properties
 * Improve selectors
+* Fix styling
 
 === 0.2.1 (July 20, 2013)
 
