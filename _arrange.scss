@@ -48,16 +48,17 @@ $bits-arrange-gutter: 10px !default; /* 2 */
 /**
  * 1. Rely on table layout.
  * 2. Zero out the default spacing that might be on an element (e.g., `ul`).
- * 3. Reset the table-layout algorithm in case a component is nested.
- * 4. Make sure the component fills the full width of its parent.
+ * 3. Make sure the component fills the full width of its parent.
+ * 4. Reset the table-layout algorithm in case a component is nested.
  */
 
 .#{$bits-components-ns}Arrange {
   display: table; /* 1 */
   margin: 0; /* 2 */
   padding: 0; /* 2 */
-  table-layout: auto; /* 3 */
-  width: 100%; /* 4 */
+  width: 100%; /* 3 */
+
+  table-layout: auto; /* 4 */
 }
 
 /**
@@ -95,8 +96,8 @@ $bits-arrange-gutter: 10px !default; /* 2 */
  */
 
 .#{$bits-components-ns}Arrange-sizeFill img {
-  height: auto;
   max-width: 100%;
+  height: auto;
 }
 
 /**
