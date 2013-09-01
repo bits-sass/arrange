@@ -1,6 +1,7 @@
 === HEAD
 
 * Reorder properties
+* Improve selectors
 
 === 0.2.1 (July 20, 2013)
 
