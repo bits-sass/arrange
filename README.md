@@ -66,9 +66,8 @@ Or for an equally spaced row of buttons or icons, etc.
 </ul>
 ```
 
-If you want to change the default gutter associated with the
-`Arrange--withGutter` modifier, you can do so by modifying the
-`bits-arrange-gutter` variable.
+If you want to change the default gutter associated with the `Arrange--gutter`
+modifier, you can do so by modifying the `bits-arrange-gutter-sizes` variable.
 
 N.B. This component affects the width of images in cells.
 
