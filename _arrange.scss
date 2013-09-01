@@ -15,10 +15,14 @@ $bits-components-ns: 'bits-' !default; /* 1 */
 /**
  * Arrange component
  *
- * 1. Size of inter-cell gutter.
+ * 1. List of generated gutters.
  */
 
-$bits-arrange-gutter: 10px !default; /* 1 */
+$bits-arrange-gutter-sizes: /* 1 */ (
+  (small 5px)
+  (medium 10px)
+  (large 20px)
+) !default;
 
 /* -------------------------------------------------------------------------- */
 
@@ -119,6 +123,8 @@ $bits-arrange-gutter: 10px !default; /* 1 */
   width: auto !important;
 }
 
+
+
 /* Vertical alignment modifiers
    ========================================================================== */
 
@@ -139,6 +145,8 @@ $bits-arrange-gutter: 10px !default; /* 1 */
     }
   }
 }
+
+
 
 /* Equal-width modifier
    ========================================================================== */
@@ -167,25 +175,54 @@ $bits-arrange-gutter: 10px !default; /* 1 */
   }
 }
 
+/* -------------------------------------------------------------------------- */
 
+/**
+ * Modifier: Arrange cells with gutter
+ *
+ * --------------
+ * Example usage:
+ * --------------
+ *
+ * <ul class="Arrange Arrange--gutter Arrange--gutter--medium">
+ *   <li class="Arrange-sizeFit">
+ *     ...
+ *   </li>
+ *   <li class="Arrange-sizeFill">
+ *     ...
+ *   </li>
+ *   <li class="Arrange-sizeFit">
+ *     ...
+ *   </li>
+ * </ul>
+ */
 
-/* Gutter-separating modifier
-   ========================================================================== */
-
-.#{$bits-components-ns}Arrange--withGutter {
+.#{$bits-components-ns}Arrange--gutter {
   > {
     .#{$bits-components-ns}Arrange-sizeFill,
     .#{$bits-components-ns}Arrange-sizeFit {
-      padding-left: $bits-arrange-gutter;
+      &:first-child {
+        padding-left: 0;
+      }
     }
   }
 }
 
-.#{$bits-components-ns}Arrange--withGutter {
-  > {
-    .#{$bits-components-ns}Arrange-sizeFill:first-child,
-    .#{$bits-components-ns}Arrange-sizeFit:first-child {
-      padding-left: 0;
+
+
+/* Generated gutters
+   ========================================================================== */
+
+@each $size in $bits-arrange-gutter-sizes {
+  $sizeName: nth($size, 1);
+  $sizeVal: nth($size, 2);
+
+  .#{$bits-components-ns}Arrange--gutter--#{$sizeName} {
+    > {
+      .#{$bits-components-ns}Arrange-sizeFill,
+      .#{$bits-components-ns}Arrange-sizeFit {
+        padding-left: $sizeVal;
+      }
     }
   }
 }

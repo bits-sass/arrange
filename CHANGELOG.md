@@ -3,6 +3,7 @@
 * Reorder properties
 * Improve selectors
 * Fix styling
+* Rewrite gutters
 
 === 0.2.1 (July 20, 2013)
 

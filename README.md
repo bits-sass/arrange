@@ -13,7 +13,7 @@ Read more about [Bits.sass toolkit](https://github.com/bits-sass/bits.sass).
 ## Available SASS variables
 
 * `bits-components-ns` - components namespace, defaults to 'bits-'
-* `bits-arrange-gutter` - size of inter-cell gutter (used by `Arrange--withGutter`)
+* `bits-arrange-gutter-sizes` - list of generated gutters
 
 ## Available classes
 
@@ -21,7 +21,10 @@ Read more about [Bits.sass toolkit](https://github.com/bits-sass/bits.sass).
 * `Arrange--middle` - modifier class for middle-aligned cells
 * `Arrange--bottom` - modifier class for bottom-aligned cells
 * `Arrange--equal` - modifier class for equal-width cells
-* `Arrange--withGutter` - modifier class for a 10px inter-cell gutter
+* `Arrange--gutter` - modifier class for an inter-cell gutter
+* `Arrange--gutter--small` - (adjustable) gutter of 5px
+* `Arrange--gutter--medium` - (adjustable) gutter of 10px
+* `Arrange--gutter--large` - (adjustable) gutter of 20px
 * `Arrange-sizeFit` - child class for cells to snap to fit their content
 * `Arrange-sizeFill` - child class for cells to expand to fill the remaining space
 
