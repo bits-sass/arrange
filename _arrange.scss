@@ -3,30 +3,6 @@
    ========================================================================== */
 
 /**
- * Variables
- *
- * It is recommended to override these.
- *
- * 1. Component namespace.
- */
-
-$bits-components-ns: 'bits-' !default; /* 1 */
-
-/**
- * Arrange component
- *
- * 1. List of generated gutters.
- */
-
-$bits-arrange-gutter-sizes: /* 1 */ (
-  (small 5px)
-  (medium 10px)
-  (large 20px)
-) !default;
-
-/* -------------------------------------------------------------------------- */
-
-/**
  * This component lets you lay out a row of cells in various ways. You can
  * specify whether a cell should be wide enough to fit its content, or take up
  * the remaining space in the row. It's also possible to give all cells an
@@ -40,9 +16,7 @@ $bits-arrange-gutter-sizes: /* 1 */ (
  * first 'Arrange-sizeFill' in the component's source order will not share the
  * extra space with any subsequent nodes of that class.
  *
- * --------------
- * Example usage:
- * --------------
+ * Example HTML:
  *
  * <div class="Arrange Arrange--middle">
  *   <div class="Arrange-sizeFit">
@@ -56,6 +30,30 @@ $bits-arrange-gutter-sizes: /* 1 */ (
  *   </div>
  * </div>
  */
+
+/* Variables
+   ========================================================================== */
+
+/**
+ * Bits.sass components namespace
+ */
+
+$bits-components-ns: 'bits-' !default;
+
+/**
+ * Arrange component
+ *
+ * 1. List of generated gutters.
+ */
+
+$bits-arrange-gutter-sizes: /* 1 */ (
+  (small 5px)
+  (medium 10px)
+  (large 20px)
+) !default;
+
+/* Component
+   ========================================================================== */
 
 /**
  * 1. Rely on table layout.
@@ -72,6 +70,9 @@ $bits-arrange-gutter-sizes: /* 1 */ (
 
   table-layout: auto; /* 4 */
 }
+
+/* Descendants
+   ========================================================================== */
 
 /**
  * There are two possible types of child.
@@ -123,10 +124,12 @@ $bits-arrange-gutter-sizes: /* 1 */ (
   width: auto !important;
 }
 
-
-
-/* Vertical alignment modifiers
+/* Component modifiers
    ========================================================================== */
+
+/**
+ * Vertically align all cells to middle
+ */
 
 .#{$bits-components-ns}Arrange--middle {
   > {
@@ -137,6 +140,10 @@ $bits-arrange-gutter-sizes: /* 1 */ (
   }
 }
 
+/**
+ * Vertically align all cells to bottom
+ */
+
 .#{$bits-components-ns}Arrange--bottom {
   > {
     .#{$bits-components-ns}Arrange-sizeFill,
@@ -146,12 +153,9 @@ $bits-arrange-gutter-sizes: /* 1 */ (
   }
 }
 
-
-
-/* Equal-width modifier
-   ========================================================================== */
-
 /**
+ * Equal-width
+ *
  * This layout algorithm will create equal-width table cells, irrespective of
  * the width of their content.
  */
@@ -175,10 +179,8 @@ $bits-arrange-gutter-sizes: /* 1 */ (
   }
 }
 
-/* -------------------------------------------------------------------------- */
-
 /**
- * Modifier: Arrange cells with gutter
+ * Arrange cells with gutter
  *
  * --------------
  * Example usage:
@@ -197,6 +199,10 @@ $bits-arrange-gutter-sizes: /* 1 */ (
  * </ul>
  */
 
+/**
+ * Remove left padding from the first child
+ */
+
 .#{$bits-components-ns}Arrange--gutter {
   > {
     .#{$bits-components-ns}Arrange-sizeFill,
@@ -208,10 +214,7 @@ $bits-arrange-gutter-sizes: /* 1 */ (
   }
 }
 
-
-
-/* Generated gutters
-   ========================================================================== */
+/* Gutter size generator */
 
 @each $size in $bits-arrange-gutter-sizes {
   $sizeName: nth($size, 1);

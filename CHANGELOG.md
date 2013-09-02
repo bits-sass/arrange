@@ -4,6 +4,7 @@
 * Improve selectors
 * Fix styling
 * Rewrite gutters
+* Use new style for comments
 
 === 0.2.1 (July 20, 2013)
 
