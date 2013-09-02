@@ -1,5 +1,7 @@
 === HEAD
 
+=== 0.3.0 (September 2, 2013)
+
 * Reorder properties
 * Improve selectors
 * Fix styling
